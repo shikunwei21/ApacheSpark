@@ -49,7 +49,7 @@
 
 # COMMAND ----------
 
-df = spark.read.parquet('/FileStore/datasets/USED_CAR_PARQUET/')
+df = spark.read.parquet('/tmp/FileStore/datasets/USED_CAR_PARQUET/')
 display(df.limit(4))
 
 # COMMAND ----------

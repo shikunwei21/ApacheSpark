@@ -67,7 +67,7 @@ display(df_rdd)
 
 # COMMAND ----------
 
-df_csv = spark.read.option("header", "true").csv("/FileStore/datasets/sales/orderlist.csv")
+df_csv = spark.read.option("header", "true").csv("/tmp/FileStore/datasets/sales/orderlist.csv")
 display(df_csv)
 
 # COMMAND ----------

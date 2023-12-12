@@ -43,7 +43,7 @@ custom_schema = StructType(
     StructField("play_hours", DecimalType(), True),
     StructField("rating", IntegerType(), True)
 ])
-df = spark.read.option("header", "true").schema(custom_schema).csv('/FileStore/datasets/steam-200k.csv')
+df = spark.read.option("header", "true").schema(custom_schema).csv('/tmp/FileStore/datasets/steam-200k.csv')
 display(df)
 
 # COMMAND ----------
@@ -62,21 +62,21 @@ df.rdd.getNumPartitions()
 
 # We are using a game steam dataset. It will partition your data into default values of partitions which is 3 in my case you can check using df.rdd.getNumPartitions(). This process will be quicker as we do not have any partition key so spark does not have to sort and partition data based on key.
 
-df.write.mode("overwrite").parquet("/FileStore/output/gamelogs_unpart")
+df.write.mode("overwrite").parquet("/tmp/FileStore/output/gamelogs_unpart")
 
 # COMMAND ----------
 
-display(dbutils.fs.ls('/FileStore/output/gamelogs_unpart'))
+display(dbutils.fs.ls('/tmp/FileStore/output/gamelogs_unpart'))
 
 # COMMAND ----------
 
 # We are using a game steam dataset. This will create multiple folders based on game names. we have 5155 unique game, it will create 5155 folders. This process will take longer time to execute.
 
-df.write.partitionBy("game").mode("overwrite").parquet("/FileStore/output/gamelogs_part")
+df.write.partitionBy("game").mode("overwrite").parquet("/tmp/FileStore/output/gamelogs_part")
 
 # COMMAND ----------
 
-df_files =  dbutils.fs.ls('/FileStore/output/gamelogs_part') 
+df_files =  dbutils.fs.ls('/tmp/FileStore/output/gamelogs_part') 
 type(df_files)
 
 # COMMAND ----------
@@ -86,7 +86,7 @@ len(df_files) # So we can see we have 5156 (5155 for games, 1 for log)
 # COMMAND ----------
 
 # Lets read from our partition data
-df_game = spark.read.parquet("/FileStore/output/gamelogs_part/")
+df_game = spark.read.parquet("/tmp/FileStore/output/gamelogs_part/")
 display(df_game)
 
 # COMMAND ----------

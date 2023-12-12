@@ -13,7 +13,7 @@
 
 # COMMAND ----------
 
-dbutils.fs.mkdirs('/FileStore/datasets')
+dbutils.fs.mkdirs('/tmp/FileStore/datasets')
 
 # COMMAND ----------
 

@@ -32,7 +32,7 @@ custom_schema = StructType(
     StructField("play_hours", DecimalType(), True),
     StructField("rating", IntegerType(), True)
 ])
-df = spark.read.option("header", "true").schema(custom_schema).csv('/FileStore/datasets/steam-200k.csv')
+df = spark.read.option("header", "true").schema(custom_schema).csv('/tmp/FileStore/datasets/steam-200k.csv')
 display(df)
 
 # COMMAND ----------

@@ -18,8 +18,8 @@
 
 # COMMAND ----------
 
-df_ol = spark.read.option("header", "true").csv("/FileStore/datasets/sales/orderlist.csv")
-df_od = spark.read.option("header", "true").csv("/FileStore/datasets/sales/orderdetails.csv")
+df_ol = spark.read.option("header", "true").csv("/tmp/FileStore/datasets/sales/orderlist.csv")
+df_od = spark.read.option("header", "true").csv("/tmp/FileStore/datasets/sales/orderdetails.csv")
 
 display(df_ol.limit(3))
 display(df_od.limit(3))
@@ -55,7 +55,7 @@ df_mah.printSchema() # so you can see we have rename column & Amount type is cha
 # So now after doing this analysis & transformation we need to write this result to somewhere. For the sake of demo I will use delta lake to write the output.
 
 # Write parquet files
-df_mah.write.mode("overwrite").parquet("/FileStore/output/ClothingSalesMah_par/")
+df_mah.write.mode("overwrite").parquet("/tmp/FileStore/output/ClothingSalesMah_par/")
 
 # COMMAND ----------
 
@@ -66,7 +66,7 @@ df_mah.write.mode("overwrite").parquet("/FileStore/output/ClothingSalesMah_par/"
 
 
 # Write CSV files
-df_mah.write.mode("overwrite").csv("/FileStore/output/ClothingSalesMah_csv/")
+df_mah.write.mode("overwrite").csv("/tmp/FileStore/output/ClothingSalesMah_csv/")
 
 # COMMAND ----------
 
@@ -76,7 +76,7 @@ df_mah.write.mode("overwrite").csv("/FileStore/output/ClothingSalesMah_csv/")
 # COMMAND ----------
 
 # Write JSON files
-df_mah.write.mode("overwrite").json("/FileStore/output/ClothingSalesMah_json/")
+df_mah.write.mode("overwrite").json("/tmp/FileStore/output/ClothingSalesMah_json/")
 
 # COMMAND ----------
 
@@ -109,7 +109,7 @@ df_mah.write.format("delta").saveAsTable("default.OrderSalesMah")
 # COMMAND ----------
 
 ## Write to delta lake. It will save by default in parquet
-df_mah.write.format("delta").mode("overwrite").save("/FileStore/output/ClothingSalesMah_delta/")
+df_mah.write.format("delta").mode("overwrite").save("/tmp/FileStore/output/ClothingSalesMah_delta/")
 
 # COMMAND ----------
 

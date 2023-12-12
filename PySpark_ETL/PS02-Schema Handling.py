@@ -34,7 +34,7 @@ from pyspark.sql.types import StringType, IntegerType, StructField, StructType
 df_infer = spark \
             .read \
             .option("header", "true") \
-            .csv("/FileStore/datasets/cancer.csv")
+            .csv("/tmp/FileStore/datasets/cancer.csv")
 
 df_infer.printSchema()
 
@@ -46,7 +46,7 @@ df_infer = spark \
             .read \
             .option("header", "true") \
             .option("inferSchema", "true")\
-            .csv("/FileStore/datasets/cancer.csv")
+            .csv("/tmp/FileStore/datasets/cancer.csv")
 
 df_infer.printSchema()
 # So now you will see datatypes are different, schema will check all the data and will choose corrct type for each columns. Keep in mind this option is slower as spark has to traverse whole data to identity data type. So avoid this for big data sets
@@ -117,7 +117,7 @@ df_mall = spark \
         .read \
         .schema(custom_schema) \
         .option("header", "true") \
-        .csv("/FileStore/datasets/Mall_Customers.csv")
+        .csv("/tmp/FileStore/datasets/Mall_Customers.csv")
 display(df_mall)
 
 # COMMAND ----------

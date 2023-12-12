@@ -66,7 +66,7 @@ you will see initial_setup & clean_up notebooks called in every notebooks. It is
 
 pyspark_init_setup - this notebook will copy dataset from my github repo to dbfs. It will also generate used car parquet dataset. All the datasets will be avalable at
 
-**/FileStore/datasets**
+**/tmp/FileStore/datasets**
 
 
 ![d5859667-databricks-logo](https://user-images.githubusercontent.com/32331579/174993501-dc93102a-ec36-4607-a3dc-ab67a54a341b.png)

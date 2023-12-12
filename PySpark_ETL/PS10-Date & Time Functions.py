@@ -11,7 +11,7 @@
 
 # COMMAND ----------
 
-df = spark.read.option("header", "true").csv("/FileStore/datasets/sales/orderlist.csv")
+df = spark.read.option("header", "true").csv("/tmp/FileStore/datasets/sales/orderlist.csv")
 display(df)
 
 # COMMAND ----------

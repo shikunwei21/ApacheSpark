@@ -15,7 +15,7 @@
 df = spark \
     .read \
     .option("multiline", "true")\
-    .json("/FileStore/datasets/used_cars_nested.json")
+    .json("/tmp/FileStore/datasets/used_cars_nested.json")
 
 display(df)
 

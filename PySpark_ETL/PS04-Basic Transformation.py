@@ -30,7 +30,7 @@
 
 # COMMAND ----------
 
-df_raw = spark.read.parquet("/FileStore/datasets/USED_CAR_PARQUET/")
+df_raw = spark.read.parquet("/tmp/FileStore/datasets/USED_CAR_PARQUET/")
 display(df_raw)
 
 # COMMAND ----------

@@ -45,7 +45,7 @@
 # MAGIC   poutcome STRING,
 # MAGIC   y STRING
 # MAGIC ) USING CSV OPTIONS (
-# MAGIC   path "/FileStore/tables/dataset/*.csv",
+# MAGIC   path "/tmp/FileStore/tables/dataset/*.csv",
 # MAGIC   delimiter ";",
 # MAGIC   header "true"
 # MAGIC );
@@ -65,7 +65,7 @@
 # MAGIC %sql -- We can also create external table without defining schema.
 # MAGIC DROP TABLE IF EXISTS bank_report_nc;
 # MAGIC CREATE EXTERNAL TABLE bank_report_nc USING CSV OPTIONS (
-# MAGIC   path "/FileStore/tables/dataset/*.csv",
+# MAGIC   path "/tmp/FileStore/tables/dataset/*.csv",
 # MAGIC   delimiter ";",
 # MAGIC   header "true"
 # MAGIC );

@@ -43,7 +43,7 @@ df_csv = spark \
     .option("encoding", "UTF-8") \
     .option("delmiter", ",") \
     .option("header", "True") \
-    .csv("/FileStore/datasets/cancer.csv")
+    .csv("/tmp/FileStore/datasets/cancer.csv")
 
 # COMMAND ----------
 
@@ -81,7 +81,7 @@ all_record = df_csv.collect() # return whole dataset. Do not use it until you ne
 
 # COMMAND ----------
 
-df_json_sales = spark.read.option("multiline", "true").json("/FileStore/datasets/unece.json")
+df_json_sales = spark.read.option("multiline", "true").json("/tmp/FileStore/datasets/unece.json")
 
 # COMMAND ----------
 
@@ -94,7 +94,7 @@ display(df_json_sales)
 
 # COMMAND ----------
 
-df_json = spark.read.option("multiline", "true").json("/FileStore/datasets/used_cars_nested.json")
+df_json = spark.read.option("multiline", "true").json("/tmp/FileStore/datasets/used_cars_nested.json")
 
 # COMMAND ----------
 
@@ -131,7 +131,7 @@ display(df_json)
 
 # COMMAND ----------
 
-df_par = spark.read.parquet("/FileStore/datasets/USED_CAR_PARQUET/")
+df_par = spark.read.parquet("/tmp/FileStore/datasets/USED_CAR_PARQUET/")
 display(df_par)
 
 # COMMAND ----------

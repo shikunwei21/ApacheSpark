@@ -1,5 +1,5 @@
 # Databricks notebook source
-dbutils.fs.rm('/FileStore/datasets/', True)
+dbutils.fs.rm('/tmp/FileStore/datasets/', True)
 
 # COMMAND ----------
 

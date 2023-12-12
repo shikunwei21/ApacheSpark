@@ -120,9 +120,9 @@ display(df_cross)
 # COMMAND ----------
 
 # We will use sales dataset. We have three tables: order list, order details & sales target. Let's load data first. Order list and details are linked using order id. Order details & Sales target are linked with category.
-df_ol = spark.read.option("header", "true").csv("/FileStore/datasets/sales/orderlist.csv")
-df_od = spark.read.option("header", "true").csv("/FileStore/datasets/sales/orderdetails.csv")
-df_st = spark.read.option("header", "true").csv("/FileStore/datasets/sales/salestarget.csv")
+df_ol = spark.read.option("header", "true").csv("/tmp/FileStore/datasets/sales/orderlist.csv")
+df_od = spark.read.option("header", "true").csv("/tmp/FileStore/datasets/sales/orderdetails.csv")
+df_st = spark.read.option("header", "true").csv("/tmp/FileStore/datasets/sales/salestarget.csv")
 
 # COMMAND ----------
 

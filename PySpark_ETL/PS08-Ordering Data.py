@@ -9,7 +9,7 @@
 
 # COMMAND ----------
 
-df_ol = spark.read.option("header", "true").csv("/FileStore/datasets/sales/orderlist.csv")
+df_ol = spark.read.option("header", "true").csv("/tmp/FileStore/datasets/sales/orderlist.csv")
 display(df_ol)
 
 # COMMAND ----------

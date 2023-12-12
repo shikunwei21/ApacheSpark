@@ -31,7 +31,7 @@ from pyspark.sql.functions import col
 
 # COMMAND ----------
 
-df = spark.read.option("header", "true").csv('/FileStore/datasets/missing_val_dataset.csv')
+df = spark.read.option("header", "true").csv('/tmp/FileStore/datasets/missing_val_dataset.csv')
 
 # COMMAND ----------
 
