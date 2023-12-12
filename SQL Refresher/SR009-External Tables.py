@@ -24,7 +24,7 @@
 
 # COMMAND ----------
 
-# MAGIC %sql -- here we are creating an external table from CSV file which is stored in my databricks storage. below command may not run in your system as you may not have same file at the same location. So you can upload a CSV file (in my case it was tab delimited) in your databricks storage and update the path and columns accordingly. th csv file which I used is available at : https://raw.githubusercontent.com/martandsingh/datasets/master/bank-full.csv
+# MAGIC %sql -- here we are creating an external table from CSV file which is stored in my databricks storage. below command may not run in your system as you may not have same file at the same location. So you can upload a CSV file (in my case it was tab delimited) in your databricks storage and update the path and columns accordingly. th csv file which I used is available at : ../datasets/bank-full.csv
 # MAGIC DROP TABLE IF EXISTS bank_report;
 # MAGIC CREATE EXTERNAL TABLE bank_report (
 # MAGIC   age STRING,
